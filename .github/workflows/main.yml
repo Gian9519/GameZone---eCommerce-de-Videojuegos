@@ -1,0 +1,55 @@
+# Nombre del workflow
+name: Build and Deploy to GitHub Pages
+
+# Permisos necesarios para que el workflow pueda escribir en Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Se dispara cada vez que hay un push en la rama 'main'
+on:
+  push:
+    branches:
+      - main
+
+# El trabajo que se va a realizar
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Descargar el código del repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Paso 2: Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+
+      # Paso 3: Instalar las dependencias
+      - name: Install dependencies
+        run: npm ci
+
+      # Paso 4: Construir la aplicación para producción
+      - name: Build application
+        run: npm run build
+
+      # Paso 5: Subir la carpeta 'build' a GitHub Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 6: Desplegar el artifact a GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
