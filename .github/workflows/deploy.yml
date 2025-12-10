@@ -1,5 +1,11 @@
 name: Deploy React App
 
+# AÑADE ESTE BLOQUE COMPLETO
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 on:
   push:
     branches:
