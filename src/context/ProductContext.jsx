@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { fetchGames } from '../services/gamesAPI';
 
@@ -50,8 +50,8 @@ export const ProductProvider = ({ children }) => {
   };
 
   // Cargar juegos desde la API
-  const loadGames = async (page = 1, search = '') => {
-    try {
+const loadGames = useCallback(async (page = 1, search = '') => {
+      try {
       setLoading(true);
       setError(null);
       
@@ -76,12 +76,12 @@ export const ProductProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [productsPerPage, searchTerm]);
 
   // Cargar la primera página de productos al iniciar
   useEffect(() => {
     loadGames(1, searchTerm);
-  }, []);
+  }, [loadGames, searchTerm]);
 
   // Filtrar productos cuando cambia el término de búsqueda
   useEffect(() => {
