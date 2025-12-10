@@ -148,7 +148,7 @@ Esto creará una carpeta `build` con los archivos optimizados para despliegue.
 
 ## Licencia
 
-Este proyecto fue desarrollado como parte del curso de Talento Lab.
+Este proyecto fue desarrollado como parte del curso de Talento Tech.
 
 ## Créditos
 
