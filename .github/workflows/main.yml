@@ -32,7 +32,7 @@ jobs:
 
       # Paso 3: Instalar las dependencias
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # Paso 4: Construir la aplicación para producción
       - name: Build application
