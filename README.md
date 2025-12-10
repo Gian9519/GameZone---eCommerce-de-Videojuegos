@@ -154,3 +154,4 @@ Este proyecto fue desarrollado como parte del curso de Talento Lab.
 
 - Datos de videojuegos proporcionados por [RAWG](https://rawg.io/)
 - Iconos de [React Icons](https://react-icons.github.io/react-icons/)
+
