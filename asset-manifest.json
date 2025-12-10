@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GameZone---eCommerce-de-Videojuegos/static/css/main.d4f1c150.css",
+    "main.js": "/GameZone---eCommerce-de-Videojuegos/static/js/main.f72df487.js",
+    "index.html": "/GameZone---eCommerce-de-Videojuegos/index.html",
+    "main.d4f1c150.css.map": "/GameZone---eCommerce-de-Videojuegos/static/css/main.d4f1c150.css.map",
+    "main.f72df487.js.map": "/GameZone---eCommerce-de-Videojuegos/static/js/main.f72df487.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4f1c150.css",
+    "static/js/main.f72df487.js"
+  ]
+}
